@@ -10,9 +10,6 @@ workflows:
         script: |
           npm install -g expo-cli
           npm install
-      - name: Prebuild (optional)
-        script: |
-          npx expo prebuild --no-install
       - name: Build APK
         script: |
           npx expo build:android -t apk
