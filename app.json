@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "demoCamera",
-    "slug": "demoCamera",
+    "name": "Neo Camera",
+    "slug": "NeoCamera",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,10 +18,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.kadesh_shyne.NeoCamera"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "43f9019b-180e-41bd-b296-e92297aebd75"
+      }
     }
   }
 }

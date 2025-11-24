@@ -219,6 +219,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     marginTop: 30,
+
   },
   topControlsContainer: {
     height: 100,
@@ -236,6 +237,9 @@ const styles = StyleSheet.create({
 buttonText: {
     color: 'white',
     fontSize: 16,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
 },
 camera: {
   flex:1,
