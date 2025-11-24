@@ -2,12 +2,11 @@ workflows:
   android-expo:
     name: Android Expo Build
     max_build_duration: 60
-    instance_type: mac_m1 # Use mac_m1 or standard depending on your plan
+    instance_type: linux  # valid options: linux, linux_x2, linux_x4, mac_mini, mac_mini_m1, etc.
     environment:
-      vars:
-        EXPO_TOKEN: Encrypted(...) # optional, if you want to login automatically
-      flutter: stable
       node: 20
+      vars:
+        EXPO_TOKEN: Encrypted(...) # optional, only if you want automatic login
     scripts:
       - name: Install dependencies
         script: |
@@ -16,16 +15,8 @@ workflows:
       - name: Prebuild (optional)
         script: |
           npx expo prebuild --no-install
+      - name: Build APK
+        script: |
+          npx expo build:android -t apk
     artifacts:
-      - android/app/build/outputs/**/*.apk
-      - android/app/build/outputs/**/*.aab
-    publishing:
-      email:
-        recipients:
-          - kadeshemmanuel@gmail.com
-      codemagic:
-        notify_on_build_failed: true
-        notify_on_build_succeeded: true
-    triggers:
-      - push
-      - pull_request
+      - '**/*.apk'
